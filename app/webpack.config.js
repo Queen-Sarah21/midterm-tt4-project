@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     global: path.resolve(__dirname, "global.js"),
     index: path.resolve(__dirname, "index.js"),
-    // listProducts: "./list-products.js",
+    listProducts: path.resolve(__dirname, "list-products.js"),
     // addProducts: "./add-products.js",
   },
   output: {
@@ -36,7 +36,7 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|jpeg)$/,
         type: "asset/resource", // Para copiar arquivos de imagem
         generator: {
           filename: 'assets/images/[name][hash][ext][query]', // Colocando as imagens dentro de assets/images/
@@ -60,11 +60,11 @@ module.exports = {
       chunks: ["global", "index"],
       filename: "index.html",
     }),
-    // new HtmlWebpackPlugin({
-    //   template: "./list-products.html",
-    //   chunks: ["listProducts", "global"],
-    //   filename: "list-products.html",
-    // }),
+    new HtmlWebpackPlugin({
+      template: "./list-products.html",
+      chunks: ["global", "listProducts"],
+      filename: "list-products.html",
+    }),
     // new HtmlWebpackPlugin({
     //   template: "./add-products.html",
     //   chunks: ["addProducts", "global"],
