@@ -1,0 +1,24 @@
+form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+// add-products.scss
+
+// Dependencies
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
+
+// Card
+@import "./node_modules/bootstrap/scss/card";
+
+// Alert
+@import "./node_modules/bootstrap/scss/alert";
